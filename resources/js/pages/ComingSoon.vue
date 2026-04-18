@@ -29,13 +29,13 @@ function submit() {
         class="min-h-screen bg-white font-sans text-neutral-950 antialiased dark:bg-neutral-950 dark:text-neutral-100"
     >
         <div class="mx-auto flex min-h-screen max-w-6xl flex-col px-6 md:px-10">
-            <header class="flex items-center justify-between py-7">
+            <header class="flex items-center justify-between py-4 md:py-7">
                 <a
                     href="/"
                     class="flex items-center gap-2.5 text-base font-semibold tracking-tight"
                 >
-                    <AppLogo class="w-36 dark:hidden" />
-                    <AppLogo white class="hidden w-36 dark:flex" />
+                    <AppLogo class="w-32 md:w-36 dark:hidden" />
+                    <AppLogo white class="hidden w-32 md:w-36 dark:flex" />
                 </a>
                 <span
                     class="inline-flex items-center gap-2 font-mono text-xs text-neutral-500 dark:text-neutral-400"
@@ -47,14 +47,14 @@ function submit() {
                 </span>
             </header>
 
-            <main class="grow py-16 md:py-20">
+            <main class="grow pt-4 pb-16 md:py-20">
                 <span
                     class="font-mono text-xs font-semibold tracking-widest text-neutral-500 uppercase dark:text-neutral-400"
                 >
                     Coming soon
                 </span>
                 <h1
-                    class="mt-5 font-sans text-6xl leading-[0.85] font-semibold text-pretty md:text-7xl lg:text-8xl"
+                    class="mt-5 font-sans text-4xl font-semibold text-pretty md:text-7xl lg:text-8xl lg:leading-[0.85]"
                 >
                     Website ops,<br /><em
                         class="text-primary italic dark:text-primary"
@@ -64,7 +64,7 @@ function submit() {
                     ready.
                 </h1>
                 <p
-                    class="mt-6 max-w-2xl text-lg leading-relaxed text-neutral-500 dark:text-neutral-400"
+                    class="mt-6 max-w-2xl leading-relaxed text-neutral-500 md:text-lg dark:text-neutral-400"
                 >
                     Run SSL, DNS, uptime, broken-link and performance checks
                     across your whole site roster to ensure your sites stay in
@@ -78,7 +78,7 @@ function submit() {
                     @submit.prevent="submit"
                 >
                     <div
-                        class="flex gap-1.5 rounded-xl border p-1.5 transition-colors focus-within:ring-4"
+                        class="flex flex-col gap-1.5 rounded-xl border p-1.5 transition-colors focus-within:ring-4 md:flex-row"
                         :class="
                             form.errors.email
                                 ? 'border-rose-600 focus-within:ring-rose-600/10'
@@ -122,7 +122,7 @@ function submit() {
             </main>
 
             <div
-                class="relative flex aspect-2/1 items-center justify-center overflow-hidden rounded-lg border border-neutral-200 bg-neutral-50 text-neutral-200 md:rounded-2xl dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-800"
+                class="relative flex aspect-2/1 items-center justify-center overflow-hidden rounded-sm border border-neutral-200 bg-neutral-50 text-neutral-200 md:rounded-2xl dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-800"
                 aria-label="Product screenshot placeholder"
             >
                 <img
