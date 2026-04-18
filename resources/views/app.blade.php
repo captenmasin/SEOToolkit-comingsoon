@@ -37,24 +37,23 @@
             rel="stylesheet"
         />
 
+        <title>{{ $fullTitle }}</title>
+        <meta name="description" content="{{ $description }}">
+        <meta name="robots" content="{{ $robots }}">
+        <link rel="canonical" href="{{ $canonicalUrl }}">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="{{ $fullTitle }}">
+        <meta property="og:description" content="{{ $description }}">
+        <meta property="og:url" content="{{ $canonicalUrl }}">
+        <meta property="og:image" content="{{ $ogImageUrl }}">
+        <meta property="og:image:alt" content="{{ config('seo.og_image.alt') }}">
+        <meta name="twitter:card" content="{{ config('seo.twitter.card') }}">
+        <meta name="twitter:title" content="{{ $fullTitle }}">
+        <meta name="twitter:description" content="{{ $description }}">
+        <meta name="twitter:image" content="{{ $ogImageUrl }}">
+        <script type="application/ld+json">@json($structuredData, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE)</script>
+
         @vite(['resources/css/app.css', 'resources/js/app.ts', "resources/js/pages/{$page['component']}.vue"])
-        <x-inertia::head>
-            <title>{{ $fullTitle }}</title>
-            <meta data-inertia="description" name="description" content="{{ $description }}">
-            <meta data-inertia="robots" name="robots" content="{{ $robots }}">
-            <link data-inertia="canonical" rel="canonical" href="{{ $canonicalUrl }}">
-            <meta data-inertia="og:type" property="og:type" content="website">
-            <meta data-inertia="og:title" property="og:title" content="{{ $fullTitle }}">
-            <meta data-inertia="og:description" property="og:description" content="{{ $description }}">
-            <meta data-inertia="og:url" property="og:url" content="{{ $canonicalUrl }}">
-            <meta data-inertia="og:image" property="og:image" content="{{ $ogImageUrl }}">
-            <meta data-inertia="og:image:alt" property="og:image:alt" content="{{ config('seo.og_image.alt') }}">
-            <meta data-inertia="twitter:card" name="twitter:card" content="{{ config('seo.twitter.card') }}">
-            <meta data-inertia="twitter:title" name="twitter:title" content="{{ $fullTitle }}">
-            <meta data-inertia="twitter:description" name="twitter:description" content="{{ $description }}">
-            <meta data-inertia="twitter:image" name="twitter:image" content="{{ $ogImageUrl }}">
-            <script data-inertia="structured-data" type="application/ld+json">@json($structuredData, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE)</script>
-        </x-inertia::head>
     </head>
     <body class="font-sans antialiased">
         <noscript>

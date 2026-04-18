@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Head, useForm, usePage } from '@inertiajs/vue3';
+import { useForm, usePage } from '@inertiajs/vue3';
 import { computed } from 'vue';
 import ScreenshotMed from '@/images/screenshot-med.png';
 import ScreenshotSmall from '@/images/screenshot-small.png';
@@ -15,10 +15,6 @@ const form = useForm({
     email: '',
 });
 const successMessage = computed(() => page.props.flash.waitlist.success);
-const seo = computed(() => page.props.seo);
-const structuredData = computed(() =>
-    JSON.stringify(page.props.seo.structuredData),
-);
 
 function submit() {
     form.post(store.url(), {
@@ -29,73 +25,6 @@ function submit() {
 </script>
 
 <template>
-    <Head :title="seo.pageTitle">
-        <meta
-            head-key="description"
-            name="description"
-            :content="seo.description"
-        />
-        <meta head-key="robots" name="robots" :content="seo.robots" />
-        <link head-key="canonical" rel="canonical" :href="seo.canonicalUrl" />
-        <meta head-key="og:type" property="og:type" content="website" />
-        <meta
-            head-key="og:title"
-            property="og:title"
-            :content="seo.fullTitle"
-        />
-        <meta
-            head-key="og:description"
-            property="og:description"
-            :content="seo.description"
-        />
-        <meta head-key="og:url" property="og:url" :content="seo.canonicalUrl" />
-        <meta
-            head-key="og:image"
-            property="og:image"
-            :content="seo.ogImageUrl"
-        />
-        <meta
-            head-key="og:image:alt"
-            property="og:image:alt"
-            :content="seo.ogImageAlt"
-        />
-        <meta
-            head-key="og:image:width"
-            property="og:image:width"
-            :content="String(seo.ogImageWidth)"
-        />
-        <meta
-            head-key="og:image:height"
-            property="og:image:height"
-            :content="String(seo.ogImageHeight)"
-        />
-        <meta
-            head-key="twitter:card"
-            name="twitter:card"
-            :content="seo.twitterCard"
-        />
-        <meta
-            head-key="twitter:title"
-            name="twitter:title"
-            :content="seo.fullTitle"
-        />
-        <meta
-            head-key="twitter:description"
-            name="twitter:description"
-            :content="seo.description"
-        />
-        <meta
-            head-key="twitter:image"
-            name="twitter:image"
-            :content="seo.ogImageUrl"
-        />
-        <script
-            head-key="structured-data"
-            type="application/ld+json"
-            v-text="structuredData"
-        ></script>
-    </Head>
-
     <div
         class="min-h-screen bg-white font-sans text-neutral-950 antialiased dark:bg-neutral-950 dark:text-neutral-100"
     >

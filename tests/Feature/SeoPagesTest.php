@@ -2,10 +2,11 @@
 
 test('the home page includes crawlable seo metadata and fallback content', function () {
     $response = $this->get(route('home'));
+    $fullTitle = config('seo.title').' - '.config('app.name');
 
     $response
         ->assertOk()
-        ->assertSee('<title>Website monitoring, uptime and performance checks - SEOToolkit</title>', false)
+        ->assertSee("<title>{$fullTitle}</title>", false)
         ->assertSee('name="description"', false)
         ->assertSee(route('home', absolute: true), false)
         ->assertSee('application/ld+json', false)
