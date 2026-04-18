@@ -3,7 +3,7 @@
     @php
         $siteName = config('app.name', 'Laravel');
         $pageTitle = config('seo.title');
-        $fullTitle = "{$pageTitle} - {$siteName}";
+        $fullTitle = "{$pageTitle} | {$siteName}";
         $description = config('seo.description');
         $canonicalUrl = route('home', absolute: true);
         $robots = config('seo.robots');
@@ -53,7 +53,12 @@
         <meta name="twitter:image" content="{{ $ogImageUrl }}">
         <script type="application/ld+json">@json($structuredData, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE)</script>
 
+        <script defer src="https://api.pirsch.io/pa.js"
+                id="pianjs"
+                data-code="n9UHevDJTTQT6b4XEIb7yhQyhGHrfn3U"></script>
+
         @vite(['resources/css/app.css', 'resources/js/app.ts', "resources/js/pages/{$page['component']}.vue"])
+        <x-inertia::head />
     </head>
     <body class="font-sans antialiased">
         <noscript>
