@@ -2,7 +2,7 @@
 
 test('the home page includes crawlable seo metadata and fallback content', function () {
     $response = $this->get(route('home'));
-    $fullTitle = config('seo.title').' - '.config('app.name');
+    $fullTitle = config('seo.title').' | '.config('app.name');
 
     $response
         ->assertOk()
