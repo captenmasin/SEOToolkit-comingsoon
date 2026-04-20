@@ -37,7 +37,9 @@ function submit() {
                     <AppLogo class="w-32 md:w-36 dark:hidden" />
                     <AppLogo white class="hidden w-32 md:w-36 dark:flex" />
                 </a>
-                <span class="inline-flex items-center gap-2 font-mono text-xs text-neutral-500 dark:text-neutral-400">
+                <span
+                    class="inline-flex items-center gap-2 font-mono text-xs text-neutral-500 dark:text-neutral-400"
+                >
                     Launching 2026
                 </span>
             </header>
@@ -55,12 +57,17 @@ function submit() {
                     <em class="text-primary italic dark:text-primary"
                         >optimise</em
                     >
-                    your&nbsp;sites
-                    <div class="size-2 md:size-3 relative -ml-2 md:-ml-4 inline-flex rounded-full bg-linear-to-br from-emerald-400 to-emerald-500">
+                    your
+                    <span class="relative"
+                        >sites
                         <div
-                            class="absolute inset-0 size-2 shrink-0 animate-ping rounded-full bg-linear-to-br from-emerald-400 to-emerald-500 md:size-3"
-                        ></div>
-                    </div>
+                            class="absolute bottom-3 md:bottom-5 lg:bottom-6 -right-3 md:-right-5 lg:-right-4 inline-flex size-2 rounded-full bg-linear-to-br from-emerald-400 to-emerald-500 md:-ml-4 md:size-3"
+                        >
+                            <div
+                                class="absolute inset-0 size-2 shrink-0 animate-ping rounded-full bg-linear-to-br from-emerald-400 to-emerald-500 md:size-3"
+                            ></div>
+                        </div>
+                    </span>
                 </h1>
                 <p
                     class="mt-6 max-w-2xl leading-relaxed text-neutral-500 md:text-lg dark:text-neutral-400"
